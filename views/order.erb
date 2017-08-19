@@ -1,0 +1,27 @@
+<!DOCtype html>
+<html>
+<center>
+ <header>
+    <h1> Here is your order for confirmation </h1>
+    <h3> Sandwich with these toppings: <%=toppings%> </h3>
+    <h3> If you have changed your mind, unclick the boxes next to the item you no longer want.</h3>
+ </header
+
+
+<%= toppings.each do |value|%>
+<form method = "post" action = "/confirmation">
+    <p> <input type = "checkbox" value = "<%= value[] %>" name = 'toppings'> <%= value %> </p>
+<%= end %>
+<center> <input type = 'submit'> <center>
+
+ 
+
+
+<p><input type="checkbox" name="confirm">Please look over your order and check the box to confirm before hitting submit.</p>
+<form method="post" action='/confirmation'>
+ <input type="submit" name="confirm" value="confirm">
+ </form>
+ </center>
+ </body>
+
+</html>
