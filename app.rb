@@ -1,5 +1,5 @@
 require "sinatra"
-# require_relative "make_order.rb" 
+require_relative "make_order.rb" 
 get '/' do 
 erb	:sandwich_parts
 end
@@ -11,21 +11,24 @@ end
 get '/order' do
 
 	toppings = params[:toppings].split
-	erb :order, :locals=>{:toppings=>toppings}
+	erb :order, :locals=> {:toppings => toppings}
 end
 post '/order' do
 	toppings = params[:toppings].to_s
-	redirect '/confimation?toppings=' + toppings
+	value = params[:value].to_s
+	redirect '/confimation?toppings=' + toppings + '&value=' + value
 end
 get  '/confimation'do
-puts "MADE IT TO post confimation DO"
+puts "MADE IT TO get confimation DO"
 	toppings = params[:toppings].split
 	puts "TOPPINGS + #{toppings}"
-	erb :confimation, :locals=>{:toppings=>toppings}
+	value = params[:value].split
+	erb :confimation, :locals => {:toppings => toppings, :value=>value}
 end
 post '/confimation'do
 puts "MADE IT TO post confimation DO"
 	toppings = params[:toppings].to_s
 	puts "TOPPINGS + #{toppings}"
-	erb :confimation, :locals=>{:toppings=>toppings}
+	value = params[:value].to_s
+	erb :confimation, :locals=>{:toppings=>toppings, :value=>value}
 end

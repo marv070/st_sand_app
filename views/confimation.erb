@@ -1,3 +1,21 @@
 <!DOCtype html>
-<center><h1>Thank you for confirming your order.</h1>
-Your order of a sandwich with <%=toppings%> will be ready in 10 minutes.</center>
+<html>
+<center>
+<header>
+	<h1>Thank you for confirming your order.</h1>
+</header>
+
+<body>
+<form action = "/confirmation">
+
+	<%toppings.each do|value|%>
+	<%value%>
+
+	<br>
+	<%end%>
+</form>
+<p>Your order of a sandwich with <%= toppings%>
+will be ready in 10 minutes.</p>
+</center>
+</body>
+</html>
