@@ -9,7 +9,7 @@
 <body>
 <form method = "post" action = "/order">
 	<% toppings.each do |value|%>
-	<p><input  type="checkbox"  value= '<%=value%>' name= 'toppings[]'><%=value%> </p>	
+	<p><input  type="checkbox"  value='<%=value%>' name='toppings[]'><%=value%> </p>	
 	<%end%>
  <input type="submit" name="confirm" value="confirm">
 </form>

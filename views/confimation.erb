@@ -7,16 +7,16 @@
 
 <body>
 <form action = "/confirmation">
-
+<p>Your order of a sandwich with </p>
 	<%toppings.each do|value|%>
 	
-	<%value%>
+	<%=value%>
 
 	<br>
 	<%end%>
 </form>
-<p>Your order of a sandwich with <%= toppings%>
-will be ready in 10 minutes.</p>
+
+</p>will be ready in 10 minutes.</p>
 </center>
 </body>
 </html>
